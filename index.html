@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function computerPlay() {
+                let randomThree = Math.floor(Math.random() * 3);
+                if (randomThree === 0) {
+                    return "Rock"
+                } else if (randomThree === 1) {
+                    return "Scissors"
+                } else {
+                    return "Paper"
+                }
+            }
+
+            function playerPlay() {
+                let playerChoice = "Rock"
+                return playerChoice;
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection === "Rock" && computerSelection === "Scissors" ||
+                    playerSelection === "Scissors" && computerSelection === "Paper" ||
+                    playerSelection === "Paper" && computerSelection === "Rock") {
+                        alert(`Congrats! ${playerSelection} beats ${computerSelection}!`)
+                } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
+                    playerSelection === "Scissors" && computerSelection === "Rock" ||
+                    playerSelection === "Paper" && computerSelection === "Scissors") {
+                        alert(`Sorry! ${computerSelection} beats ${playerSelection}.`)
+                } else {
+                    alert (`It's a tie!`)
+                }
+            }
+
+            const playerSelection = playerPlay();
+            const computerSelection = computerPlay();
+            playRound(playerSelection, computerSelection);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
