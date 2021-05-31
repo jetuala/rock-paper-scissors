@@ -5,11 +5,20 @@
             function computerPlay() {
                 compChoices = ["Rock", "Paper", "Scissors"];
                 let randomThree = Math.floor(Math.random() * 3);
-                return compChoices[randomThree()];
+                return compChoices[randomThree];
             }
 
             function playerPlay() {
-                let playerChoice = "Rock"
+                let playerChoice = "";
+                let choice = false;
+                do {
+                    playerChoice = prompt("Please enter Rock, Paper, or Scissors!");
+                    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
+                    if (playerChoice == "Rock" || playerChoice == "Paper" || playerChoice == "Scissors") {
+                        choice = true;
+                    }
+                } 
+                while (choice === false)
                 return playerChoice;
             }
 
