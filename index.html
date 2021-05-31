@@ -1,70 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
-            let playerScore = 0;
-            let computerScore = 0;
-
-            function computerPlay() {
-                compChoices = ["Rock", "Paper", "Scissors"];
-                let randomThree = Math.floor(Math.random() * 3);
-                return compChoices[randomThree];
-            }
-
-            function displayScore(playerScore, computerScore) {
-                console.log("Player Score: " + playerScore + " Computer Score: " + computerScore);
-            }
-
-            function playerPlay() {
-                let playerChoice = "";
-                let choice = false;
-                do {
-                    playerChoice = prompt("Please enter Rock, Paper, or Scissors!");
-                    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
-                    if (playerChoice == "Rock" || playerChoice == "Paper" || playerChoice == "Scissors") {
-                        choice = true;
-                    }
-                } 
-                while (choice === false)
-                return playerChoice;
-            }
-
-            function playRound(playerSelection, computerSelection) {
-                if (playerSelection === "Rock" && computerSelection === "Scissors" ||
-                    playerSelection === "Scissors" && computerSelection === "Paper" ||
-                    playerSelection === "Paper" && computerSelection === "Rock") {
-                        playerScore++;
-                        alert(`Congrats! ${playerSelection} beats ${computerSelection}!`)
-                        displayScore(playerScore, computerScore);
-                } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
-                    playerSelection === "Scissors" && computerSelection === "Rock" ||
-                    playerSelection === "Paper" && computerSelection === "Scissors") {
-                        computerScore++;
-                        alert(`Sorry! ${computerSelection} beats ${playerSelection}.`)
-                        displayScore(playerScore, computerScore);
-                } else {
-                    alert (`It's a tie!`)
-                    displayScore(playerScore, computerScore);
-                }
-            }
-
-            function game() {
-                do {
-                    let player = playerPlay();
-                    let computer = computerPlay();
-                    playRound(player, computer);
-                } while (playerScore < 5 && computerScore < 5)
-                if (playerScore > computerScore) {
-                    alert("Congrats! You won!")
-                } else {
-                    alert("Sorry! You lost!")
-                }
-            }
-
-            game();
-        </script>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" scr="script.js"></script>
     </head>
     <body>
-
+        <h1>Rock, Paper, Scissors</h1>
+        <h4>Choose a symbol:</h4>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
     </body>
 </html>
