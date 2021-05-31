@@ -50,12 +50,12 @@ function playRound(playerSelection, computerSelection) {
 
 // Game logic
 function game() {
-    console.log("game() function called");
-    if (playerScore > computerScore) {
-        alert("Congrats! You won!")
-    } else {
-        alert("Sorry! You lost!")
-    }
+    // need to figure out game completion logic
+    // if (playerScore > computerScore) {
+    //     alert("Congrats! You won!")
+    // } else {
+    //     alert("Sorry! You lost!")
+    // }
 }
 
 // Game command
