@@ -4,6 +4,8 @@ let computerScore = 0;
 let rockBtn = document.getElementById("Rock");
 let paperBtn = document.getElementById("Paper");
 let scissorsBtn = document.getElementById("Scissors");
+let playerScoreSpan = document.getElementById("playerScore");
+let computerScoreSpan = document.getElementById("computerScore");
 
 // event listeners
 rockBtn.addEventListener("click", function() {
@@ -25,7 +27,8 @@ function computerPlay() {
 
 // Displays score
 function displayScore(playerScore, computerScore) {
-    console.log("Player Score: " + playerScore + " Computer Score: " + computerScore);
+    playerScoreSpan.textContent = playerScore;
+    computerScoreSpan.textContent = computerScore;
 }
 
 // Compares player and computer choice and determines winner of a round
@@ -36,12 +39,20 @@ function playRound(playerSelection, computerSelection) {
             playerScore++;
             alert(`Congrats! ${playerSelection} beats ${computerSelection}!`)
             displayScore(playerScore, computerScore);
+            if (playerScore === 5) {
+                alert("Congrats! You won this game!");
+                game();
+            }
     } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
         playerSelection === "Scissors" && computerSelection === "Rock" ||
         playerSelection === "Paper" && computerSelection === "Scissors") {
             computerScore++;
             alert(`Sorry! ${computerSelection} beats ${playerSelection}.`)
             displayScore(playerScore, computerScore);
+            if (computerScore === 5) {
+                alert("Sorry, you lost this game!");
+                game();
+            }
     } else {
         alert (`It's a tie!`)
         displayScore(playerScore, computerScore);
@@ -50,12 +61,22 @@ function playRound(playerSelection, computerSelection) {
 
 // Game logic
 function game() {
-    // need to figure out game completion logic
-    // if (playerScore > computerScore) {
-    //     alert("Congrats! You won!")
-    // } else {
-    //     alert("Sorry! You lost!")
-    // }
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+    if (confirm("Welcome to Rock Paper Scissors! Start a new game?")) {
+        playerScore = 0;
+        computerScore = 0;
+        playerScoreSpan.textContent = 0;
+        computerScoreSpan.textContent = 0;
+        rockBtn.disabled = false;
+        paperBtn.disabled = false;
+        scissorsBtn.disabled = false;
+    } else {
+        alert("....Why are you here then?")
+    }
+
 }
 
 // Game command
+game();

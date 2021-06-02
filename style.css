@@ -1,0 +1,15 @@
+#title, #score {
+    text-align: center;
+}
+
+#scoreContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#playerScoreContainer, #computerScoreContainer {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+}
