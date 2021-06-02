@@ -64,7 +64,7 @@ function game() {
     rockBtn.disabled = true;
     paperBtn.disabled = true;
     scissorsBtn.disabled = true;
-    if (confirm("Welcome to Rock Paper Scissors! Start a new game?")) {
+    if (confirm("Welcome to Rock Paper Scissors: Street Fighter Edition! Start a new game?")) {
         playerScore = 0;
         computerScore = 0;
         playerScoreSpan.textContent = 0;
