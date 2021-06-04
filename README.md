@@ -1,1 +1,1 @@
-// The second project of The Odin Project is to write a simple rock-paper-scissors game.
+// The second project of The Odin Project is to write a simple rock-paper-scissors game. I am putting a Street Fighter II twist on this project!
