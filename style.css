@@ -30,18 +30,22 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: flex-end;
 }
 
 .fighter {
     max-width: 250px;
-    height: 235px;
     display: inline-block;
-    justify-content: space-around;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 0 5px;
 }
 
 .fighter img {
+    position: relative;
+    vertical-align: bottom;
     width: 100%;
+    border-radius: 5px;
 }
 
 .center {
@@ -73,19 +77,23 @@
     height: 100%;
 }
 
-#playerBackgroundImg, #opponentBackgroundImg {
-    position: fixed;
-    top: 0;
-    z-index: -98;
-    width: 50%;
+#playerBackgroundContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
     height: 100%;
 }
 
+#playerBackgroundImg, #opponentBackgroundImg {
+    height: 100%;
+    object-fit: contain;
+}
+
 #playerBackgroundImg {
-    left: 0;
+    padding-right: 20px;
 }
 
 #opponentBackgroundImg {
-    right: 0;
+    padding-left: 20px;
 }
 
