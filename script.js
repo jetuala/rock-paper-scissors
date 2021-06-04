@@ -6,6 +6,7 @@ let paperBtn = document.getElementById("Paper");
 let scissorsBtn = document.getElementById("Scissors");
 let playerScoreSpan = document.getElementById("playerScore");
 let computerScoreSpan = document.getElementById("computerScore");
+let chooseFighter = document.getElementById("chooseFighter");
 
 // event listeners
 rockBtn.addEventListener("click", function() {
@@ -29,6 +30,11 @@ function computerPlay() {
 function displayScore(playerScore, computerScore) {
     playerScoreSpan.textContent = playerScore;
     computerScoreSpan.textContent = computerScore;
+}
+
+// Open modal window
+function openModal() {
+    chooseFighter.style.display = "block";
 }
 
 // Compares player and computer choice and determines winner of a round
@@ -72,6 +78,7 @@ function game() {
         rockBtn.disabled = false;
         paperBtn.disabled = false;
         scissorsBtn.disabled = false;
+        openModal();
     } else {
         alert("....Why are you here then?")
     }
